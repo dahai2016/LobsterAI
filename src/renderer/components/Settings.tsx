@@ -3517,7 +3517,7 @@ const Settings: React.FC<SettingsProps> = ({ onClose, initialTab, notice, onUpda
                   </button>
                   {emailCopied && (
                     <span className="text-[11px] leading-4 text-emerald-600 dark:text-emerald-400">
-                      {language === 'zh' ? '已复制' : 'Copied'}
+                      {i18nService.t('copied')}
                     </span>
                   )}
                 </div>
@@ -3598,7 +3598,7 @@ const Settings: React.FC<SettingsProps> = ({ onClose, initialTab, notice, onUpda
               </div>
 
               <p className="mt-5 text-xs text-secondary">
-                {language === 'zh' ? '网易有道 版权所有' : 'NetEase Youdao. All rights reserved.'}
+                {i18nService.t('aboutCopyright')}
               </p>
               <p className="mt-1 text-xs text-secondary">
                 Copyright &copy; {new Date().getFullYear()} NetEase Youdao. All Rights Reserved.
