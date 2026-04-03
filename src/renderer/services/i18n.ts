@@ -257,6 +257,7 @@ const translations: Record<LanguageType, Record<string, string>> = {
     imageLimitReached: '最多上传 10 张图片',
     imageReadError: '读取图片失败',
     imageInputNotSupported: '当前模型不支持图像输入',
+    imageVisionDisabledHint: '当前模型未启用图片输入，图片将以文件路径形式发送。若该模型本身支持图片理解，可在模型配置中开启图片输入选项。',
     
     // 模型选择
     selectModel: '选择模型',
@@ -1445,6 +1446,7 @@ const translations: Record<LanguageType, Record<string, string>> = {
     imageLimitReached: 'Up to 10 images',
     imageReadError: 'Failed to read image',
     imageInputNotSupported: 'Current model does not support images',
+    imageVisionDisabledHint: 'Image input is not enabled for the current model. Images will be sent as file paths. If the model supports vision, you can enable image input in the model configuration.',
     
     // Model Selection
     selectModel: 'Select Model',
