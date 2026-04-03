@@ -194,6 +194,14 @@ const coworkSlice = createSlice({
         // Streaming state is tied to the currently opened session only
         state.isStreaming = status === 'running';
       }
+
+      // Discard stale permission requests when the session is no longer running,
+      // so the permission modal doesn't linger after the session ends or errors out.
+      if (status !== 'running') {
+        state.pendingPermissions = state.pendingPermissions.filter(
+          (p) => p.sessionId !== sessionId,
+        );
+      }
     },
 
     deleteSession(state, action: PayloadAction<string>) {
