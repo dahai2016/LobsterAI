@@ -948,8 +948,10 @@ const IMSettings: React.FC = () => {
 
   // Handle platform toggle
   const handlePlatformToggle = (platform: Platform) => {
-    // Block toggle if a toggle is already in progress for any platform
-    if (togglingPlatform) return;
+    // Block toggle only if this specific platform is already toggling.
+    // Allowing other platforms to toggle independently matches the per-platform
+    // disabled styling in the UI and the re-entrancy guard inside toggleGateway.
+    if (togglingPlatform === platform) return;
     const isEnabled = isPlatformEnabled(platform);
     // Can toggle ON if credentials are present, can always toggle OFF
     const canToggle = isEnabled || canStart(platform);
